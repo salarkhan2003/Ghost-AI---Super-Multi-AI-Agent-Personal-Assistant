@@ -1,0 +1,6 @@
+{
+  "name": "Ghost AI (AIPOS)",
+  "description": "Premium, futuristic landing website for Ghost AI (AIPOS) with an interactive, multi-agent AI operating system simulator containing voice execution, knowledge graph database, and workflow automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

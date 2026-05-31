@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* Custom palette matching the premium sand/bone-beige layout screenshot exact vibes */
+  --color-sand-50: #fdfdfc;
+  --color-sand-100: #f6f5f0;
+  --color-sand-200: #f2f1eb;
+  --color-sand-300: #edebe4;
+  --color-sand-400: #eae7dd;
+  --color-sand-500: #d5d3c5;
+  --color-sand-900: #1b1a16;
+  --color-sand-950: #12110e;
+
+  --color-indigo-600: #5c5cfc;
+}
+
+/* Animations for Glowing Spheres and floating elements */
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.15;
+    filter: blur(50px) brightness(1);
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.25;
+    filter: blur(65px) brightness(1.2);
+  }
+}
+
+@keyframes orbRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatElement {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+.animate-orb-rotation {
+  animation: orbRotation 25s linear infinite;
+}
+
+.animate-float {
+  animation: floatElement 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: floatElement 7s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Scrollbar Customization for modern desktop layout */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f2f1eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c5c4bc;
+  border-radius: 9px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a4a39b;
+}
+
+/* Claymorphic Standard CSS Classes adapting to light sand background */
+.clay-card-light {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 
+    inset 2px 2px 4px rgba(255, 255, 255, 0.9),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02),
+    0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+.clay-interactive {
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.clay-interactive:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 
+    inset 3px 3px 6px rgba(255, 255, 255, 0.9),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.03),
+    0 16px 36px rgba(0, 0, 0, 0.07);
+}
+
+.squircle-2xl {
+  border-radius: 28px;
+}
+
+.squircle-3xl {
+  border-radius: 36px;
+}
+
+.orb-gradient {
+  background: conic-gradient(from 180deg at 50% 50%, #eb5a3c 0deg, #3dc9a4 90deg, #f8cb47 180deg, #5c5cfc 270deg, #eb5a3c 360deg);
+}
